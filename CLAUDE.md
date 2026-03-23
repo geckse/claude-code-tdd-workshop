@@ -8,7 +8,7 @@ This repository is **boilerplate scaffolding** for Claude Code's skills, agents,
 
 The core flow is:
 
-1. **`/plan`** — Invoke the `writing-plans` skill to turn a spec or requirements into a detailed implementation plan saved to `docs/plans/`.
+1. **`/plan`** — Invoke the `writing-plans` skill to turn a spec or requirements into a detailed implementation plan saved to `docs/plans/`. The plan **must** incorporate the `test-driven-development` skill — every task in the plan follows red-green-refactor: write the failing test, verify it fails, write minimal code to pass, verify it passes, then commit.
 2. **Review** — The skill automatically dispatches a reviewer to validate the plan for completeness, TDD order, and actionability.
 3. **Execute** — Choose between:
    - **Subagent-driven**: The `plan-executor` agent runs one task at a time in an isolated worktree, following strict TDD.
